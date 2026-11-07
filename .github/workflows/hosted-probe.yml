@@ -1,0 +1,18 @@
+name: hosted-probe
+# One-off probe (2026-11-07): does a GitHub-hosted runner start for this account on a public repository?
+on:
+  push:
+    branches: [claude/project-thread-8irgh4]
+permissions:
+  contents: read
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: echo "hosted Linux runner started"
+  mac:
+    runs-on: macos-latest
+    timeout-minutes: 5
+    steps:
+      - run: echo "hosted macOS runner started"
